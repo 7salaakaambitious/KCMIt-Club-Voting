@@ -1,0 +1,182 @@
+/* Navbar.css — top bar styles */
+
+.navbar {
+  height: 64px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  gap: 16px;
+  position: sticky;  /* stays at top when page scrolls */
+  top: 0;
+  z-index: 100;
+}
+
+/* ---- Brand: hamburger + logo + title ---- */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Hamburger button — hidden on desktop, shown on mobile */
+.hamburger-button {
+  display: none;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #374151;
+  width: 32px;
+  height: 32px;
+}
+
+.hamburger-button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-logo {
+  height: 32px;
+  width: auto;
+}
+
+.navbar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+}
+
+/* ---- Search box ---- */
+
+.navbar-search {
+  position: relative;
+  flex: 1;
+  max-width: 560px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 14px 10px 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+}
+
+/* ---- Profile area ---- */
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.profile-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  overflow: hidden;
+}
+
+.avatar-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.profile-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.profile-caret {
+  width: 16px;
+  height: 16px;
+  color: #6b7280;
+}
+
+/* -------------------------------------------------------
+   TABLET (769px – 1024px): slightly smaller title text
+   ------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .navbar-title {
+    font-size: 16px;
+  }
+}
+
+/* -------------------------------------------------------
+   MOBILE (≤ 768px)
+   - Show the hamburger button
+   - Hide the title text to save space
+   - Shrink the search box
+   - Hide "Admin User" label (keep only the avatar)
+   ------------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+    gap: 10px;
+  }
+
+  .hamburger-button {
+    display: flex; /* show it on mobile */
+  }
+
+  .navbar-title {
+    display: none; /* hide the title text on small screens */
+  }
+
+  .profile-name,
+  .profile-caret {
+    display: none; /* keep only the avatar circle */
+  }
+}
+
+/* -------------------------------------------------------
+   VERY SMALL MOBILE (≤ 400px)
+   Collapse the search box to just an icon
+   ------------------------------------------------------- */
+@media (max-width: 400px) {
+  .navbar-search {
+    max-width: 36px;
+    overflow: hidden;
+  }
+
+  .search-input {
+    padding-left: 36px;
+    color: transparent; /* hide typed text visually (placeholder still works) */
+  }
+
+  .search-input::placeholder {
+    color: transparent;
+  }
+}

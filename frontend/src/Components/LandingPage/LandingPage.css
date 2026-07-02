@@ -1,0 +1,222 @@
+/* LandingPage.css
+   -----------------------------------------------------------
+   This file controls how the LandingPage.jsx component looks.
+   It's organized in the same order as the JSX file:
+     1. Page / global resets
+     2. Navbar
+     3. Hero section
+     4. Feature cards
+     5. Footer
+   ----------------------------------------------------------- */
+
+/* ---------- 1. PAGE / GLOBAL ---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* makes width/height math easier */
+}
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* light gray background behind the cards */
+}
+
+/* ---------- 2. NAVBAR ---------- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 48px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-logo {
+  height: 36px;
+  width: auto;
+}
+
+.navbar-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.nav-link-active {
+  color: #2563eb; /* blue, to show "Home" is the active page */
+}
+
+.login-button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* ---------- 3. HERO SECTION ---------- */
+
+.hero {
+  /* The diagonal orange -> blue gradient seen in the screenshot */
+  background: linear-gradient(180deg, #f97316 0%, #fb923c 35%, #3b82f6 75%, #2563eb 100%);
+  padding: 100px 24px 140px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+
+.hero-subtitle {
+  max-width: 700px;
+  margin: 0 auto 36px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f3f4f6;
+}
+
+.get-started-button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.get-started-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* ---------- 4. FEATURE CARDS ---------- */
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  /* Negative margin pulls the cards UP so they overlap the hero,
+     just like in the screenshot. */
+  margin-top: -90px;
+  padding: 0 24px 60px;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  color: #2563eb;
+}
+
+.icon-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.feature-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* ---------- 5. FOOTER ---------- */
+
+.footer {
+  text-align: center;
+  padding: 24px;
+  border-top: 1px solid #e5e7eb;
+  color: #2563eb;
+  font-size: 14px;
+}
+
+/* ---------- RESPONSIVE (smaller screens) ---------- */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .navbar-right {
+    gap: 18px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 380px;
+  }
+}

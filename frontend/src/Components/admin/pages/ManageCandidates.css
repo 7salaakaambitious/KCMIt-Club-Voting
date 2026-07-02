@@ -1,0 +1,133 @@
+/* ManageCandidates.css */
+
+.page-heading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.candidates-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 12px;
+  flex-wrap: wrap; /* wraps on small screens */
+}
+
+.add-candidate-button {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-candidate-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Card wrapper — overflow-x allows table scrolling on small screens */
+.candidates-card {
+  background-color: #ffffff;
+  border: 2px solid #f97316;
+  border-radius: 10px;
+  padding: 8px 24px 24px;
+  box-shadow: 4px 4px 0 rgba(30, 58, 138, 0.25);
+  overflow-x: auto;
+}
+
+.candidates-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px; /* keeps columns readable before table scrolls */
+}
+
+.candidates-table thead tr {
+  background-color: #0d1f4c;
+}
+
+.candidates-table th {
+  text-align: left;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 16px;
+}
+
+.candidates-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.candidates-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-approved {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.status-pending {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 14px;
+  padding: 0;
+}
+
+.link-button-danger {
+  color: #dc2626;
+}
+
+/* -------------------------------------------------------
+   TABLET (769px – 1024px)
+   ------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .page-heading {
+    font-size: 26px;
+  }
+}
+
+/* -------------------------------------------------------
+   MOBILE (≤ 768px)
+   ------------------------------------------------------- */
+@media (max-width: 768px) {
+  .page-heading {
+    font-size: 22px;
+  }
+
+  .candidates-card {
+    padding: 8px 12px 16px;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,122 @@
+/* Results.css */
+
+.page-heading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 24px;
+}
+
+.results-card {
+  background-color: #ffffff;
+  border: 2px solid #f97316;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 4px 4px 0 rgba(30, 58, 138, 0.25);
+}
+
+/* Desktop: name | progress bar | stats — all in one row */
+.result-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 160px;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.result-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.result-position {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 2px 0 0;
+}
+
+.result-bar-track {
+  height: 10px;
+  background-color: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.result-bar-fill {
+  height: 100%;
+  background-color: #2563eb;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.result-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.result-votes {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.result-percent {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* -------------------------------------------------------
+   TABLET (769px – 1024px)
+   Shrink the name column so the bar has more space
+   ------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .page-heading {
+    font-size: 26px;
+  }
+
+  .result-row {
+    grid-template-columns: 160px 1fr 120px;
+    gap: 14px;
+  }
+}
+
+/* -------------------------------------------------------
+   MOBILE (≤ 768px)
+   Stack everything vertically: name → bar → stats
+   ------------------------------------------------------- */
+@media (max-width: 768px) {
+  .page-heading {
+    font-size: 22px;
+  }
+
+  .results-card {
+    padding: 20px 16px;
+  }
+
+  .result-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px 0;
+  }
+
+  /* On mobile, put votes and percent on the same line */
+  .result-stats {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .result-bar-track {
+    height: 8px;
+  }
+}

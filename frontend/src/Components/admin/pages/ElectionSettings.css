@@ -1,0 +1,115 @@
+/* ElectionSettings.css */
+
+.page-heading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 24px;
+}
+
+.settings-card {
+  background-color: #ffffff;
+  border: 2px solid #f97316;
+  border-radius: 10px;
+  padding: 28px;
+  max-width: 560px;
+  box-shadow: 4px 4px 0 rgba(30, 58, 138, 0.25);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus {
+  border-color: #2563eb;
+}
+
+/* Two date inputs sit side by side on desktop */
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-checkbox label {
+  margin-bottom: 0;
+}
+
+.save-button {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.save-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* -------------------------------------------------------
+   TABLET
+   ------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .page-heading {
+    font-size: 26px;
+  }
+
+  .settings-card {
+    max-width: 100%;
+  }
+}
+
+/* -------------------------------------------------------
+   MOBILE — stack the two date inputs vertically
+   ------------------------------------------------------- */
+@media (max-width: 768px) {
+  .page-heading {
+    font-size: 22px;
+  }
+
+  .settings-card {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+
+  /* Stack start/end date inputs vertically instead of side by side */
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

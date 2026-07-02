@@ -1,0 +1,82 @@
+/* DashboardLayout.css
+   -----------------------------------------------------------
+   Controls the overall page frame layout.
+
+   Breakpoints used across ALL files:
+     Mobile  : max-width 768px
+     Tablet  : 769px – 1024px
+     Desktop : 1025px and above
+   ----------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+/* Full-height column: Navbar on top, body below */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Side-by-side: Sidebar left, main content right */
+.dashboard-body {
+  display: flex;
+  flex: 1;
+  position: relative; /* needed so the overlay can cover this area */
+}
+
+/* Main content area */
+.dashboard-main {
+  flex: 1;
+  background-color: #f3f4f6;
+  padding: 32px 40px;
+  overflow-y: auto;
+  min-width: 0; /* prevents flex children from overflowing */
+}
+
+/* -------------------------------------------------------
+   Dark overlay that appears behind the sidebar on mobile
+   when it is open. Tapping it closes the sidebar.
+   Hidden on desktop (the sidebar is always visible there).
+   ------------------------------------------------------- */
+.sidebar-overlay {
+  display: none; /* hidden on desktop */
+}
+
+/* -------------------------------------------------------
+   TABLET  (769px – 1024px)
+   Reduce padding so content doesn't feel cramped.
+   ------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    padding: 24px 28px;
+  }
+}
+
+/* -------------------------------------------------------
+   MOBILE  (≤ 768px)
+   The sidebar becomes a slide-in drawer. We hide it off
+   the left edge and slide it in when .sidebar-open is
+   added (that class is set by Sidebar.jsx via the isOpen
+   prop → see Sidebar.css for the transform rules).
+   ------------------------------------------------------- */
+@media (max-width: 768px) {
+  .dashboard-main {
+    padding: 20px 16px;
+  }
+
+  /* Show the dark overlay behind the open sidebar */
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0; /* covers the entire viewport */
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 99; /* above main content, below sidebar */
+  }
+}
