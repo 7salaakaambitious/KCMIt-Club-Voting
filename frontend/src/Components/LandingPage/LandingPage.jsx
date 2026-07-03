@@ -14,12 +14,12 @@ function Navbar() {
         <a href="#home" className="nav-link nav-link-active">
           Home
         </a>
-        <a href="#features" className="nav-link">
+        {/* <a href="#features" className="nav-link">
           Features
         </a>
         <a href="#about" className="nav-link">
           About
-        </a>
+        </a> */}
         <Link to="/signup" className="login-button">
           Login
         </Link>
