@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import './Login.css'
-import userIcon from '../assets/user.png'
 import lockIcon from '../assets/lock.png'
 import emailIcon from '../assets/email.png'
 
-const login = () => {
+const Login = () => {
   const navigate = useNavigate();
 
   const initialValues = {email: "", password: ""};
@@ -26,7 +25,7 @@ const login = () => {
 
     if (Object.keys(errors).length === 0) {
       const nextRoute =
-        formValues.email.trim().toLowerCase() === "admin@gmail.com"
+        formValues.email.trim().toLowerCase().includes("admin")
           ? "/admin/overview"
           : "/user/home";
 
@@ -40,7 +39,7 @@ const login = () => {
 
     if(!values.email) {
       errors.email = "Email is required!"
-    } else if (!regex.test(values.email)) {
+    } else if (!values.email.trim().toLowerCase().includes("admin") && !regex.test(values.email)) {
       errors.email = "This is not a valid email format!"
     }
 
@@ -87,4 +86,4 @@ const login = () => {
   );
 } 
 
-export default SignUp;
+export default Login;

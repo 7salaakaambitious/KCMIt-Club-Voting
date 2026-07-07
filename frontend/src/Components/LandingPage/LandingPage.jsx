@@ -14,15 +14,15 @@ function Navbar() {
         <a href="#home" className="nav-link nav-link-active">
           Home
         </a>
-        {/* <a href="#features" className="nav-link">
-          Features
-        </a>
-        <a href="#about" className="nav-link">
-          About
-        </a> */}
         <Link to="/signup" className="login-button">
+          Sign Up
+        </Link>
+
+        <Link to="/login" className="login-button">
           Login
         </Link>
+        
+
       </nav>
     </header>
   );

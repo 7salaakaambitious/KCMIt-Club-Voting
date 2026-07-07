@@ -10,6 +10,8 @@ import Results from "./Components/admin/pages/Results";
 import UserLayout from "./Components/users/layoutUser";
 import UserHome from "./Components/users/pages/home";
 import UserSettings from "./Components/users/pages/settings";
+import UserVotings from "./Components/users/pages/votings"
+import UserResults from "./Components/users/pages/results"
 
 const ADMIN_PAGES = {
   overview: <Overview />,
@@ -21,6 +23,8 @@ const ADMIN_PAGES = {
 
 const USER_PAGES = {
   home: <UserHome />,
+  votings: <UserVotings/>,
+  results: <UserResults/>,
   settings: <UserSettings />,
 };
 

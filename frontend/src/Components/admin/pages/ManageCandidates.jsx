@@ -6,16 +6,17 @@
 // as the Overview page, but lives in its own file/CSS as requested.
 // -----------------------------------------------------------
 
+import { useState } from 'react';
 import "./ManageCandidates.css";
 
-const CANDIDATES = [
-  { name: "John Smith", position: "President", votes: 312, status: "Approved" },
-  { name: "Jane Doe", position: "Vice President", votes: 287, status: "Approved" },
-  { name: "Alice Wong", position: "Secretary", votes: 0, status: "Pending" },
-  { name: "Mike Chen", position: "Treasurer", votes: 198, status: "Approved" },
-];
-
 export default function ManageCandidates() {
+  const [candidates] = useState([
+    { name: "John Smith", position: "President", votes: 312, status: "Approved" },
+    { name: "Jane Doe", position: "Vice President", votes: 287, status: "Approved" },
+    { name: "Alice Wong", position: "Secretary", votes: 0, status: "Pending" },
+    { name: "Mike Chen", position: "Treasurer", votes: 198, status: "Approved" },
+  ]);
+
   return (
     <div className="candidates-page">
       <div className="candidates-header">
@@ -35,7 +36,7 @@ export default function ManageCandidates() {
             </tr>
           </thead>
           <tbody>
-            {CANDIDATES.map((c, index) => (
+            {candidates.map((c, index) => (
               <tr key={index}>
                 <td>{c.name}</td>
                 <td>{c.position}</td>

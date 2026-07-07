@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import './SignUp.css'
 import userIcon from '../assets/user.png'
 import lockIcon from '../assets/lock.png'
@@ -25,12 +25,7 @@ const SignUp = () => {
     setIsSubmit(true);
 
     if (Object.keys(errors).length === 0) {
-      const nextRoute =
-        formValues.username.trim().toLowerCase() === "admin"
-          ? "/admin/overview"
-          : "/user/home";
-
-      navigate(nextRoute);
+      navigate("/login");
     }
   };
 
@@ -92,7 +87,10 @@ const SignUp = () => {
             </button>
           </div>
 
-          
+          <p className="login">
+                Already have an account? <Link to="/login">Login</Link>
+            </p>
+
 
         </form>
     </div>

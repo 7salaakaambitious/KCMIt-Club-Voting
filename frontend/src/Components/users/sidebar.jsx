@@ -11,6 +11,31 @@ const MENU_ITEMS = [
       </svg>
     ),
   },
+
+
+  {
+  key: "votings",
+  label: "Votings",
+  icon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <rect x="3" y="4" width="18" height="12" rx="1" strokeWidth="2" />
+      <path d="M8 20h8" strokeWidth="2" />
+      <path d="M12 16v4" strokeWidth="2" />
+    </svg>
+  ),
+},
+
+{
+  key: "results",
+  label: "Results",
+  icon: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M12 3a9 9 0 1 0 9 9h-9V3z" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M12 3a9 9 0 0 1 9 9" strokeWidth="2" strokeLinejoin="round" />
+    </svg>
+  ),
+},
+
   {
     key: "settings",
     label: "Settings",
