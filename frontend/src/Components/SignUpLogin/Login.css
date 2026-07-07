@@ -176,11 +176,6 @@ input {
     text-decoration: underline;
 }
 
-.login{
-    text-align: center;
-    margin-top: 15px;
-    font-size: 14px;
-}
 
 @media (max-width: 360px) {
     .container {
