@@ -8,10 +8,11 @@ import VoterList from "./Components/admin/pages/VoterList";
 import ElectionSettings from "./Components/admin/pages/ElectionSettings";
 import Results from "./Components/admin/pages/Results";
 import UserLayout from "./Components/users/layoutUser";
-import UserHome from "./Components/users/pages/home";
-import UserSettings from "./Components/users/pages/settings";
-import UserVotings from "./Components/users/pages/votings"
-import UserResults from "./Components/users/pages/results"
+import UserHome from "./Components/users/pages/Home";
+import UserSettings from "./Components/users/pages/Settings";
+import UserVotings from "./Components/users/pages/Votings"
+import UserResults from "./Components/users/pages/Results"
+import Login from "./Components/SignUpLogin/Login";
 
 const ADMIN_PAGES = {
   overview: <Overview />,
@@ -70,14 +71,24 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route
+       <Route
+        path="/login"
+        element={
+          <main className="app">
+            <Login />
+          </main>
+        }
+      />
+
+        <Route
         path="/signup"
         element={
           <main className="app">
             <SignUp />
           </main>
         }
-      />
+        />
+
       <Route path="/overview" element={<Navigate to="/admin/overview" replace />} />
       <Route path="/admin" element={<Navigate to="/admin/overview" replace />} />
       <Route path="/admin/:page" element={<AdminDashboardRoute />} />
